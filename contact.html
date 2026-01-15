@@ -52,17 +52,19 @@
         }
 
         .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 500;
-            letter-spacing: 0.15em;
             text-decoration: none;
-            color: var(--text-primary);
-            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
         }
 
-        .logo:hover {
-            color: var(--accent);
+        .logo-img {
+            height: 50px;
+            width: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo:hover .logo-img {
+            opacity: 0.8;
         }
 
         nav {
@@ -101,66 +103,20 @@
             width: 100%;
         }
 
-        nav a.active {
-            color: var(--text-primary);
-        }
-
         nav .contact-btn {
             padding: 0.5rem 1.25rem;
             border: 1px solid var(--accent);
-            color: var(--accent);
+            background: var(--accent);
+            color: white;
             transition: all 0.3s ease;
         }
 
         nav .contact-btn:hover {
-            background: var(--accent);
-            color: white;
-        }
-
-        nav .contact-btn.active {
-            background: var(--accent);
-            color: white;
+            background: transparent;
+            color: var(--accent);
         }
 
         nav .contact-btn::after {
-            display: none;
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            margin-top: 1rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            min-width: 150px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-        }
-
-        .dropdown:hover .dropdown-content {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-content a {
-            display: block;
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .dropdown-content a:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-content a::after {
             display: none;
         }
 
@@ -171,34 +127,6 @@
             align-items: center;
             justify-content: center;
             padding: 120px 3rem 3rem;
-        }
-
-        /* Sidebar Navigation */
-        .sidebar-nav {
-            position: fixed;
-            left: 3rem;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .sidebar-nav a {
-            font-size: 0.7rem;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: var(--text-secondary);
-            transition: color 0.3s ease;
-            padding: 0.25rem 0;
-        }
-
-        .sidebar-nav a:hover,
-        .sidebar-nav a.active {
-            color: var(--accent);
         }
 
         /* Contact Form */
@@ -292,56 +220,7 @@
 
         .submit-btn:hover {
             background: var(--accent);
-            color: var(--bg-primary);
-        }
-
-        /* Back to Top */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
-            border: 1px solid var(--border);
-            background: var(--bg-secondary);
-            color: var(--text-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1.25rem;
-            transition: all 0.3s ease;
-            z-index: 100;
-        }
-
-        .back-to-top:hover {
-            background: var(--accent);
-            border-color: var(--accent);
             color: white;
-        }
-
-        /* Footer */
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 1.5rem;
-            text-align: center;
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            letter-spacing: 0.1em;
-            background: linear-gradient(to top, var(--bg-primary), transparent);
-        }
-
-        footer a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: var(--accent);
         }
 
         /* Animations */
@@ -357,15 +236,13 @@
         }
 
         /* Responsive */
-        @media (max-width: 1024px) {
-            .sidebar-nav {
-                display: none;
-            }
-        }
-
         @media (max-width: 768px) {
             header {
                 padding: 1rem 1.5rem;
+            }
+
+            .logo-img {
+                height: 40px;
             }
 
             nav {
@@ -377,7 +254,7 @@
             }
 
             main {
-                padding: 100px 1.5rem 5rem;
+                padding: 100px 1.5rem 3rem;
             }
 
             .contact-title {
@@ -393,13 +270,12 @@
 </head>
 <body>
     <header id="header">
-        <a href="index.html" class="logo">ThinkHiga</a>
+        <a href="index.html" class="logo"><img src="logo.webp" alt="ThinkHiga" class="logo-img"></a>
         <nav>
             <a href="index.html">Home</a>
-            <a href="contact.html" class="contact-btn active">Contact</a>
+            <a href="contact.html" class="contact-btn">Contact</a>
         </nav>
     </header>
-
 
     <main>
         <div class="contact-container">
@@ -437,8 +313,5 @@
             </form>
         </div>
     </main>
-
-
-    <a href="#header" class="back-to-top">↑</a>
 </body>
 </html>
