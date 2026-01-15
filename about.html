@@ -15,12 +15,12 @@
         }
 
         :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #111111;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f5;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
             --accent: #c4a052;
-            --border: rgba(255, 255, 255, 0.1);
+            --border: rgba(0, 0, 0, 0.1);
         }
 
         html {
@@ -46,7 +46,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(10, 10, 10, 0.98);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
         }
@@ -105,6 +105,22 @@
 
         nav a.active {
             color: var(--text-primary);
+        }
+
+        nav .contact-btn {
+            padding: 0.5rem 1.25rem;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        nav .contact-btn:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        nav .contact-btn::after {
+            display: none;
         }
 
         .dropdown {
@@ -178,9 +194,9 @@
             height: 100%;
             background: linear-gradient(
                 to top,
-                rgba(10, 10, 10, 1) 0%,
-                rgba(10, 10, 10, 0.5) 50%,
-                rgba(10, 10, 10, 0.2) 100%
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(255, 255, 255, 0) 100%
             );
         }
 
@@ -332,7 +348,7 @@
         .back-to-top:hover {
             background: var(--accent);
             border-color: var(--accent);
-            color: var(--bg-primary);
+            color: white;
         }
 
         /* Footer */
@@ -419,8 +435,7 @@
         <a href="index.html" class="logo"><img src="logo.webp" alt="ThinkHiga" class="logo-img"></a>
         <nav>
             <a href="index.html">Home</a>
-            <a href="about.html" class="active">About</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="contact-btn">Contact</a>
         </nav>
     </header>
 

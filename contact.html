@@ -15,12 +15,12 @@
         }
 
         :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #111111;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f5;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
             --accent: #c4a052;
-            --border: rgba(255, 255, 255, 0.1);
+            --border: rgba(0, 0, 0, 0.1);
         }
 
         html {
@@ -46,7 +46,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(10, 10, 10, 0.98);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
         }
@@ -103,6 +103,27 @@
 
         nav a.active {
             color: var(--text-primary);
+        }
+
+        nav .contact-btn {
+            padding: 0.5rem 1.25rem;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        nav .contact-btn:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        nav .contact-btn.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        nav .contact-btn::after {
+            display: none;
         }
 
         .dropdown {
@@ -296,7 +317,7 @@
         .back-to-top:hover {
             background: var(--accent);
             border-color: var(--accent);
-            color: var(--bg-primary);
+            color: white;
         }
 
         /* Footer */
@@ -375,21 +396,10 @@
         <a href="index.html" class="logo">ThinkHiga</a>
         <nav>
             <a href="index.html">Home</a>
-            <div class="dropdown">
-                <a href="#" class="active">About</a>
-                <div class="dropdown-content">
-                    <a href="about.html">About</a>
-                    <a href="contact.html" class="active">Contact</a>
-                </div>
-            </div>
+            <a href="contact.html" class="contact-btn active">Contact</a>
         </nav>
     </header>
 
-    <nav class="sidebar-nav">
-        <span style="font-size: 0.6rem; color: var(--text-secondary); margin-bottom: 0.5rem;">About</span>
-        <a href="about.html">About</a>
-        <a href="contact.html" class="active">Contact</a>
-    </nav>
 
     <main>
         <div class="contact-container">
@@ -428,9 +438,6 @@
         </div>
     </main>
 
-    <footer>
-        Powered by <a href="http://www.squarespace.com" target="_blank" rel="noopener">Squarespace</a>
-    </footer>
 
     <a href="#header" class="back-to-top">↑</a>
 </body>
